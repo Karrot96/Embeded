@@ -1,0 +1,35 @@
+body
+    background-color: #FF0044
+    padding: 0
+    margin: 0
+    .landing
+        height: 100vh
+        width: 100vw
+        background: url(../img/landing.jpg) no-repeat center center fixed
+        background-size: cover
+        .FogOverlay
+            background: rgba(217,214,209,0.8)
+            height: 100%
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            transition: 1s ease
+            h1
+                text-align: center
+                color: #000000
+            button
+                //background-color: #38bedc
+                width: 25%
+                border: none
+                cursor: pointer
+                outline: none
+                padding: 20px
+                display: block
+                margin: 50px auto
+                background-color: transparent
+                position: relative
+                border: 2px solid #000
+                transition: 0.5s ease
+                &:hover
+                    background: darken(#38bedc, 10%)

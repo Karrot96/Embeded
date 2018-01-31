@@ -10,7 +10,7 @@ i2cPort=I2C(scl=Pin(5), sda=Pin(4), freq=100000)
 #I think use of scan will be important
 #Since list we can then just use the locations in list and dynamically allocate
 
-address = i2cPort.scanopen()
+address = i2cPort.scan()
 
 i2cPort.writeto(address[0],bytearray([0xf3]))
 #reads 2 bytes of data from address 0x40

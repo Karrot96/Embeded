@@ -22,7 +22,7 @@ def temp():
     tempInt = int.from_bytes(tempRaw,'big')
     
     #convert raw value to real world value
-    temp = (175.72*tempRaw/65536)-46.85
+    temp = (175.72*tempInt/65536)-46.85
    
     print(temp)
 

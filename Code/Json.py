@@ -1,6 +1,6 @@
 import Sensor
 import CommInternet
-import json
+import ujson as json
 
 def jsonify():
     return json.dumps({'name':'humid1' , 'value': Sensor.humidity()})

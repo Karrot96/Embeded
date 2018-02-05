@@ -4,7 +4,7 @@ import network
 
 
 CLIENT_ID = machine.unique_id()
-BROKER_ADDRESS = '192.168.0.10'
+BROKER_ADDRESS =  '192.168.0.10'
 client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
 client.connect()
 #client.publish(TOPIC,bytes(data,'utf-8'))
@@ -16,4 +16,4 @@ sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
 sta_if.connect('EEERover', 'exhibition')
 
-print (isconnected())
+print(sta_if.isconnected())

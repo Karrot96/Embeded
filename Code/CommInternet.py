@@ -27,4 +27,5 @@ def SendJson(data):
     client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
     client.connect()
     client.publish(TOPIC,bytes(data,'utf-8'))
+    client.disconnect()
     print("Published")

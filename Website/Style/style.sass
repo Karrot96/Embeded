@@ -9,13 +9,20 @@ body
         background: url(../img/landing.jpg) no-repeat center center fixed
         background-size: cover
         .FogOverlay
-            background: $FogMain
+            background: url(../img/landingblur.jpg) no-repeat center center fixed
+            background-size: cover
             height: 100%
             width: 100%
             display: flex
             flex-direction: column
             justify-content: center
+            opacity: 0.4
             transition: 1s ease
+            .glass
+                background: $FogOverlay
+                width: 100vw
+                height: 100vh
+                transition: 0.5 ease
             h1
                 text-align: center
                 color: $FogText

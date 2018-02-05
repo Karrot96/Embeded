@@ -19,9 +19,10 @@ def ConnectWifi():
     print ('Connected: ', sta_if.isconnected())
     print('network config:', sta_if.ifconfig())
 
-
-# CLIENT_ID = machine.unique_id()
-# BROKER_ADDRESS =  '192.168.0.10'
-# client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
-# client.connect()
-#client.publish(TOPIC,bytes(data,'utf-8'))
+def SendJson(data):
+    CLIENT_ID = machine.unique_id()
+    BROKER_ADDRESS =  '192.168.0.10'
+    TOPIC = "ESYS/netball/"
+    client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
+    client.connect()
+    client.publish(TOPIC,bytes(data,'utf-8'))

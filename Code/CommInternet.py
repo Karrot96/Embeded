@@ -1,5 +1,8 @@
 from umqtt.simple import MQTTClient
 
+import network
+
+
 CLIENT_ID = machine.unique_id()
 
 client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)

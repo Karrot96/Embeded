@@ -7,7 +7,8 @@ body {
     background: url(../img/landing.jpg) no-repeat center center fixed;
     background-size: cover; }
     body .landing .FogOverlay {
-      background: rgba(217, 214, 209, 0.8);
+      background: url(../img/landingblur.jpg) no-repeat center center fixed;
+      background-size: cover;
       height: 100%;
       width: 100%;
       display: -webkit-box;

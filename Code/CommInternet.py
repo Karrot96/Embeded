@@ -1,8 +1,8 @@
-#from umptt.simple import MQTTClient
+from umqtt.simple import MQTTClient
 
-#client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
-#client.connect()
-#client.publish(TOPIC,bytes(data,'utf-8'))
+client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
+client.connect()
+client.publish(TOPIC,bytes(data,'utf-8'))
 
 ap_if = network.WLAN(network.AP_IF)
 ap_if.active(False)

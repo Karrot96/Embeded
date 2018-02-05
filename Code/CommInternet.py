@@ -1,5 +1,7 @@
 from umqtt.simple import MQTTClient
 
+CLIENT_ID = machine.unique_id()
+
 client = MQTTClient(CLIENT_ID,BROKER_ADDRESS)
 client.connect()
 client.publish(TOPIC,bytes(data,'utf-8'))

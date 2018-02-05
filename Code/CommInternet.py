@@ -16,6 +16,7 @@ def ConnectWifi():
         sta_if.connect('EEERover', 'exhibition')
         while not sta_if.isconnected():
             pass
+    print ('Connected: ', sta_if.isconnected())
     print('network config:', sta_if.ifconfig())
 
 

@@ -7,6 +7,7 @@ import Json
 import ujson as json
 import time
 import network
+import subscribe
 
 while True:
     DisableAp()

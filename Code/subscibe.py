@@ -14,7 +14,7 @@ def subscribe(server="localhost"):
     while True:
         if True:
             # Blocking wait for message
-            c.wait_msg()
+            client.wait_msg()
         else:
             # Non-blocking wait for message
             client.check_msg()

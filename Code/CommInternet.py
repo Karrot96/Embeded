@@ -17,7 +17,7 @@ def ConnectWifi():
         while not sta_if.isconnected():
             pass
     print ('Connected: ', sta_if.isconnected())
-     if not sta_if.isconnected():
+    if not sta_if.isconnected():
         print('Not connected to network...')
     print('network config:', sta_if.ifconfig())
 

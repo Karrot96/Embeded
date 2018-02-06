@@ -8,4 +8,4 @@ def jsonify():
 def send():
     CommInternet.SendJson(jsonify())
 
-print ('humidity: ', Sensor.humidity())
+#print ('humidity: ', Sensor.humidity())

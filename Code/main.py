@@ -10,14 +10,11 @@ import network
 
 while True:
     DisableAp()
-    SendJson(data)
+    send()
+    
     time.sleep(1)
     
-    sub_cb(topic, msg)
-    subscribe(server="localhost")
-    
-    jsonify()
-    send()
+    sub_topic(server="localhost")
     
     time.sleep(300)
     

@@ -10,12 +10,12 @@ import network
 import subscribe
 
 while True:
-    DisableAp()
-    send()
+    CommInternet.DisableAp()
+    Json.send()
     
     time.sleep(1)
     
-    sub_topic(server="localhost")
+    subscribe.sub_topic(server="localhost")
     
     time.sleep(300)
     

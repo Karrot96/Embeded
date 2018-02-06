@@ -10,7 +10,7 @@ def sub_topic(server="localhost"):
     client  = MQTTClient(machine.unique_id(), '192.168.0.10')
     client.set_callback(sub_cb)
     client.connect()
-    client.subscribe("ESYS/netball")
+    client.subscribe(b"ESYS/netball")
     while True:
         if True:
             # Blocking wait for message

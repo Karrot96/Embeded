@@ -11,17 +11,12 @@ import network
 while True:
     DisableAp()
     ConnectWifi()
-    if not sta_if.isconnected():
-        print("not connected")
-        exit()
     SendJson(data)
     time.sleep(1)
     subscribe(server="localhost")
     
     jsonify()
     send()
-    
-    print ('humidity: ', Sensor.humidity())
     
     time.sleep(300)
     

@@ -13,6 +13,8 @@ while True:
     ConnectWifi()
     SendJson(data)
     time.sleep(1)
+    
+    sub_cb(topic, msg)
     subscribe(server="localhost")
     
     jsonify()

@@ -10,7 +10,6 @@ import network
 
 while True:
     DisableAp()
-    ConnectWifi()
     SendJson(data)
     time.sleep(1)
     

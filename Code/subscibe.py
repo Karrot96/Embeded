@@ -6,7 +6,7 @@ from umqtt.simple import MQTTClient
 def sub_cb(topic, msg):
     print((topic, msg))
 
-def subscribe(server="localhost"):
+def sub_topic(server="localhost"):
     client  = MQTTClient(machine.unique_id(), '192.168.0.10')
     client.set_callback(sub_cb)
     client.connect()

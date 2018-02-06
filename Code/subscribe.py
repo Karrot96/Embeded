@@ -11,15 +11,10 @@ def sub_topic(server="localhost"):
     client.set_callback(sub_cb)
     client.connect()
     client.subscribe(b"ESYS/netball")
-    while True:
-        if True:
-            # Blocking wait for message
-            client.wait_msg()
-        else:
-            # Non-blocking wait for message
-            client.check_msg()
-            # Then need to sleep to avoid 100% CPU usage (in a real
-            # app other useful actions would be performed instead)
-            time.sleep(1)
+    client.check_msg()
+    # Then need to sleep to avoid 100% CPU usage (in a real
+    # app other useful actions would be performed instead)
+    time.sleep(1)
+    
 
     client.disconnect()

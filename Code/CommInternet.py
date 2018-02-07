@@ -17,7 +17,12 @@ def ConnectWifi():
         while not sta_if.isconnected():
             pass
     print ('Connected: ', sta_if.isconnected())
+<<<<<<< HEAD
     print (sta_if.isconnected(self.fail('Not Connected')))
+=======
+    if not sta_if.isconnected():
+        print('Not connected to network...')
+>>>>>>> 0a8ab7dab8fbbcf17eb95e3643e57a29e18ae4f4
     print('network config:', sta_if.ifconfig())
 
 def SendJson(data):

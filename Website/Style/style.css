@@ -1,16 +1,60 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  color: black; }
+  body .menu {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    background: #22a3bf; }
+    body .menu .logo {
+      padding: 16px;
+      display: inline-block; }
+      body .menu .logo h2 {
+        margin: 0; }
+    body .menu .options {
+      padding: 16px;
+      display: inline-block;
+      float: right; }
+      body .menu .options ul {
+        margin: 0;
+        padding: 0; }
+        body .menu .options ul li {
+          display: inline;
+          padding-left: 16px; }
+          body .menu .options ul li a {
+            text-decoration: none;
+            font-size: 18px; }
   body .landing {
     height: 100vh;
     width: 100vw;
     background: url(../img/landing.jpg) no-repeat center center fixed;
     background-size: cover; }
     body .landing .FogOverlay {
-      background: url(../img/landingblur.jpg) no-repeat center center fixed;
-      background-size: cover;
       height: 100%;
       width: 100%;
+      -webkit-transition: 2s ease;
+      -o-transition: 2s ease;
+      transition: 2s ease; }
+      body .landing .FogOverlay::after {
+        background: url(../img/landingblur.jpg) no-repeat center center fixed;
+        background-size: cover;
+        opacity: 0.4;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1; }
+    body .landing .glass {
+      width: 100vw;
+      background: rgba(217, 214, 209, 0.8);
+      opacity: 1;
+      height: 100vh;
+      -webkit-transition: 2s ease;
+      -o-transition: 2s ease;
+      transition: 2s ease;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -20,26 +64,22 @@ body {
       flex-direction: column;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-transition: 1s ease;
-      -o-transition: 1s ease;
-      transition: 1s ease; }
-      body .landing .FogOverlay h1 {
-        text-align: center;
-        color: #000000; }
-      body .landing .FogOverlay button {
-        width: 25%;
-        border: none;
-        cursor: pointer;
-        outline: none;
-        padding: 20px;
-        display: block;
-        margin: 50px auto;
-        background-color: transparent;
-        position: relative;
-        border: 2px solid #000000;
-        -webkit-transition: 0.6s ease;
-        -o-transition: 0.6s ease;
-        transition: 0.6s ease; }
-        body .landing .FogOverlay button:hover {
-          background: #22a3bf; }
+      justify-content: center; }
+    body .landing h1 {
+      text-align: center; }
+    body .landing button {
+      width: 25%;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 20px;
+      display: block;
+      margin: 50px auto;
+      background-color: transparent;
+      position: relative;
+      border: 2px solid #000000;
+      -webkit-transition: 0.6s ease;
+      -o-transition: 0.6s ease;
+      transition: 0.6s ease; }
+      body .landing button:hover {
+        background: #22a3bf; }

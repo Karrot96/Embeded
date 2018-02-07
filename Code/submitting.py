@@ -1,25 +1,30 @@
 import time
-import machine
 from umqtt.simple import MQTTClient
+
+# Publish test messages e.g. with:
+# mosquitto_pub -t foo_topic -m hello
 
 # Received messages from subscriptions will be delivered to this callback
 def sub_cb(topic, msg):
     print((topic, msg))
 
-def subscribe(server="localhost"):
-    c = MQTTClient(machine.unique_id(), '192.168.0.10')
-    c.set_callback(sub_cb)
-    c.connect()
-    c.subscribe("ESYS/netball")
+def main(server="localhost"):
+    client = MQTTClient("umqtt_client", server)
+    client.set_callback(sub_cb)
+    client.connect()
+    client.subscribe(b"foo_topic")
     while True:
         if True:
             # Blocking wait for message
-            c.wait_msg()
+            client.wait_msg()
         else:
             # Non-blocking wait for message
-            c.check_msg()
+            client.check_msg()
             # Then need to sleep to avoid 100% CPU usage (in a real
             # app other useful actions would be performed instead)
             time.sleep(1)
 
-    c.disconnect()
+    client.disconnect()
+
+#if __name__ == "__main__":
+#    main()

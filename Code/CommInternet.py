@@ -23,7 +23,7 @@ def ConnectWifi():
     print('network config:', sta_if.ifconfig())
 
 def SendJson(data):
-    ConnectWifi()
+    #ConnectWifi() 
     CLIENT_ID = machine.unique_id()
     BROKER_ADDRESS =  '192.168.0.10'
     TOPIC = "ESYS/netball"

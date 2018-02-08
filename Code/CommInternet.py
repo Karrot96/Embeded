@@ -17,13 +17,13 @@ def ConnectWifi():
         while not sta_if.isconnected():
             pass
     print ('Connected: ', sta_if.isconnected())
-    print (sta_if.isconnected(self.fail('Not Connected')))
+    #print (sta_if.isconnected(self.fail('Not Connected')))
     if not sta_if.isconnected():
         print('Not connected to network...')
     print('network config:', sta_if.ifconfig())
 
 def SendJson(data):
-    #ConnectWifi() 
+    #ConnectWifi()
     CLIENT_ID = machine.unique_id()
     BROKER_ADDRESS =  '192.168.0.10'
     TOPIC = "ESYS/netball"

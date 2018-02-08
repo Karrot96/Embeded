@@ -64,33 +64,6 @@ body {
       flex-direction: column;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-<<<<<<< HEAD
-      justify-content: center;
-      -webkit-transition: 1s ease;
-      -o-transition: 1s ease;
-      transition: 1s ease; }
-      body .landing .FogOverlay h1 {
-        text-align: center;
-        color: #000000; }
-      body .landing .FogOverlay button {
-        width: 25%;
-        border: none;
-        cursor: pointer;
-        outline: none;
-        padding: 20px;
-        display: block;
-        margin: 50px auto;
-        background-color: transparent;
-        position: relative;
-        border: 2px solid #000000;
-        -webkit-transition: 0.6s ease;
-        -o-transition: 0.6s ease;
-        transition: 0.6s ease; }
-        body .landing .FogOverlay button:hover {
-          background: #22a3bf; }
-
-  
-=======
       justify-content: center; }
     body .landing h1 {
       text-align: center; }
@@ -110,4 +83,31 @@ body {
       transition: 0.6s ease; }
       body .landing button:hover {
         background: #22a3bf; }
->>>>>>> 0a8ab7dab8fbbcf17eb95e3643e57a29e18ae4f4
+    body .landing .text h1 {
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: fixed;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-size: 12pt; }
+    body .landing .text h2 {
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: fixed;
+      -webkit-box-align: left;
+      -ms-flex-align: left;
+      align-items: left;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-size: 12pt; }

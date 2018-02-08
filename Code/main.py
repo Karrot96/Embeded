@@ -11,5 +11,4 @@ CommInternet.ConnectWifi()
 
 while True:
     Json.send()
-    time.sleep(1)
     time.sleep(20)

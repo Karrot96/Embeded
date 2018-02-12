@@ -4,11 +4,10 @@ import ujson as json
 
 #convert data to json
 def jsonify():
-    return json.dumps({'name':'humid1' , 'value': Sensor.fog()})
+    return json.dumps({'name':'humid1' , 'value': Sensor.humidity()})
 
 #send json data using MQTT
 def send():
-    if Sensor.fog() == True:
-        CommInternet.SendJson(jsonify())
+    CommInternet.SendJson(jsonify())
 
 print ('humidity: ', Sensor.humidity())

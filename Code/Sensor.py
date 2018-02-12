@@ -10,6 +10,7 @@ i2cPort.start()
 #detects the address of the i2c device dynamically
 address = i2cPort.scan()
 
+#temp function not necessarily needed for application
 def temp():
     i2cPort.writeto(address[0],bytearray([0xF3]))
 
@@ -41,10 +42,7 @@ def humidity():
 
     #convert raw value to real world value
     humidity = ((125*humidityInt)/65536)-6
-    print(str(humidity) + "%") # Debug line
+    
+    print(str(humidity) + "%") 
+    
     return humidity
-
-# while (True):
-#     temp()
-#     humidity()
-#     time.sleep(5)

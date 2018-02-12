@@ -1,0 +1,18 @@
+body{
+    background: #00FFFF
+}
+.container{
+    width: 100vw;
+    text-align: center;
+}
+input{
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 20px;
+    display: block;
+    margin: 50px auto;
+}

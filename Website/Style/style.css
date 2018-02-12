@@ -101,11 +101,6 @@ body {
       -ms-flex-align: center;
       align-items: center; }
       body .landing .landingMain .circle {
-        -webkit-animation: fadein 2s;
-        -moz-animation: fadein 2s;
-        -ms-animation: fadein 2s;
-        -o-animation: fadein 2s;
-        animation: fadein 2s;
         background: #22a3bf;
         width: 300px;
         height: 300px;

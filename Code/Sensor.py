@@ -42,12 +42,15 @@ def humidity():
 
     #convert raw value to real world value
     humidity = ((125*humidityInt)/65536)-6
+        
+    print(str(humidity) + "%") 
     
+    return humidity
+
+def fog():
     if humidity == 100:
         fog = True
     else:
         fog = False
-        
-    print(str(humidity) + "%") 
     
     return fog

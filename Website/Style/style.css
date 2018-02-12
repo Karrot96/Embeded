@@ -83,6 +83,8 @@ body {
       transition: 0.6s ease; }
       body .landing button:hover {
         background: #22a3bf; }
+    body .landing .landingMain h1 {
+      text-align: center; }
   body .About_Us {
     background: #ff0000;
     height: 100vw;

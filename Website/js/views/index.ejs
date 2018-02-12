@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-        <% if(display){ %>
+        <% if(display == "true"){ %>
           <fieldset>
             <form action="/" method="post">
               <input name="city" type="text" class="ghost-input" type ="hidden" value="True">
@@ -16,7 +16,7 @@
             </form>
           </fieldset>
         <% } %>
-        <% if(!display){ %>
+        <% if(display == "false"){ %>
           Your Car is not fogged up
         <% } %>
     </div>

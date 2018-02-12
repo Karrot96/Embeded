@@ -3,41 +3,40 @@ var client  = mqtt.connect('http://192.168.0.10')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
+app.use(express.static('public'));
+app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded({ extended: true }));
+var obj = JSON.parse('{"RemoveFog": "True", "WindowFogged": "False", "name":"fog" , "value": "100" }')
 
 client.on('connect', function () {
   client.subscribe('ESYS/netball')
   //client.publish('ESYS/netball', '')
 })
 
+
 client.on('message', function (topic, message) {
   // message is Buffer
-  var obj = JSON.parse(message);
-  console.log(obj.value.toString())
-  if (obj.WindowFogged){
-      res.render('index', {display:true})
-  }else{
-      res.render('index', {display:false})
-  }
-  client.end()
+  obj = JSON.parse(message);
+  console.log(obj.WindowFogged.toString())
+  //client.end()
 })
 
-app.use(express.static('public'));
-app.set('view engine', 'ejs')
-app.use(bodyParser.urlencoded({ extended: true }));
-
 app.get('/', function (req, res) {
-  res.render('index', {display:false})
-  var client  = mqtt.connect('http://192.168.0.10')
-  client.subscribe('ESYS/netball')
+  //var client  = mqtt.connect('http://192.168.0.10')
+  //client.subscribe('ESYS/netball')
+  console.log(obj.WindowFogged)
+  if (obj.WindowFogged.toString() == "true"){
+      res.render('index', {display:"true"})
+  }else{
+      res.render('index', {display:"false"})
+  }
 })
 
 app.post('/', function (req, res) {
-  res.render('index', {display:false})
-  console.log(req.body.city);
-  var client  = mqtt.connect('http://192.168.0.10')
-  var x = '{"RemoveFog": "True", "WindowFogged": "True", "name":"fog" , "value": "100" }'
+  //var client  = mqtt.connect('http://192.168.0.10')
+  var x = '{"RemoveFog": "true", "WindowFogged": "true", "name":"fog" , "value": "100" }'
   var x = JSON.parse(x)
-  var client  = mqtt.connect('http://192.168.0.10')
+  //var client  = mqtt.connect('http://192.168.0.10')
   client.publish('ESYS/netball', Buffer.from(JSON.stringify(x)))
 
 })

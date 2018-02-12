@@ -105,6 +105,11 @@ body {
         height: 300px;
         border-radius: 50%; }
         body .landing .landingMain .circle h1 {
+          position: relative;
+          top: 94px;
+          border-radius: 50%;
+          width: 300px;
+          height: 300px;
           text-align: center;
           font-size: 28px; }
   body .About_Us {

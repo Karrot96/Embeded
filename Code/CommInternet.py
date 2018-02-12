@@ -36,14 +36,6 @@ def SendJson(data):
 def CheckConnection():
     import network
     sta_if = network.WLAN(network.STA_IF)
-    if not sta_if.isconnected():
-        print('connecting to network...')
-        sta_if.active(True)
-        sta_if.connect('EEERover', 'exhibition')
-        while not sta_if.isconnected():
-            pass
-    print ('Connected: ', sta_if.isconnected())
-    #print (sta_if.isconnected(self.fail('Not Connected')))
-    if not sta_if.isconnected():
-        print('Not connected to network...')
-    print('network config:', sta_if.ifconfig())
+    if sta_if.isconnected():
+        return True
+    return False

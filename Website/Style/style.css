@@ -100,7 +100,7 @@ body {
       -ms-flex-align: center;
       align-items: center; }
       body .landing .landingMain .circle {
-        background: #f00;
+        background: #22a3bf;
         width: 300px;
         height: 300px;
         border-radius: 50%; }
@@ -113,7 +113,7 @@ body {
           text-align: center;
           font-size: 28px; }
   body .About_Us {
-    background: #ff0000;
+    background: #22a3bf;
     height: 100vw;
     width: 100vw; }
     body .About_Us h1 {

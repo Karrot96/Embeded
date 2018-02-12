@@ -5,4 +5,8 @@ function landingClearFog(){
     y[0].style.opacity = '0'
     z=document.getElementsByClassName('menu')
     z[0].style.display = 'block'
+    setTimeout(function(){
+        y[0].style.display='none'
+
+    },750);
 }

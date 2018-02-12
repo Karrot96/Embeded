@@ -4,7 +4,7 @@ import ujson as json
 
 #convert data to json
 def jsonify():
-    return json.dumps({'name':'fog' , value:'Sensor.humidity()' ,  'WindowFogged':'Sensor.fog()', 'RemoveFog'})
+    return json.dumps({'name':'fog' , value:'Sensor.humidity()' ,  'WindowFogged':'Sensor.fog()', 'RemoveFog': False})
                        
 #send json data using MQTT
 def send():

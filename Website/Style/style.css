@@ -86,24 +86,22 @@ body {
   body .About_Us {
     background: #ff0000;
     height: 100vw;
-    width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    width: 100vw; }
     body .About_Us h1 {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
+      text-align: center;
+      font-size: 32px;
+      word-break: break-all;
+      line-break: auto; }
+    body .About_Us h2 {
+      text-align: left;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
       font-size: 12px;
       word-break: break-all;
       line-break: auto; }
-    body .About_Us h2 {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
+    body .About_Us h3 {
+      text-align: center;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;

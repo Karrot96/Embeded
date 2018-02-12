@@ -68,6 +68,7 @@ body {
     body .landing h1 {
       text-align: center; }
     body .landing button {
+      border-radius: 50%;
       width: 25%;
       border: none;
       cursor: pointer;
@@ -100,6 +101,11 @@ body {
       -ms-flex-align: center;
       align-items: center; }
       body .landing .landingMain .circle {
+        -webkit-animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        -ms-animation: fadein 2s;
+        -o-animation: fadein 2s;
+        animation: fadein 2s;
         background: #22a3bf;
         width: 300px;
         height: 300px;

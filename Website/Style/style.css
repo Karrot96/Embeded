@@ -113,6 +113,15 @@ body {
           height: 300px;
           text-align: center;
           font-size: 28px; }
+  body .how_it_works {
+    background: #22a3bf;
+    height: 100vw;
+    width: 100vw; }
+    body .how_it_works h1 {
+      text-align: center;
+      font-size: 32px;
+      word-break: break-all;
+      line-break: auto; }
   body .About_Us {
     background: #22a3bf;
     height: 100vw;

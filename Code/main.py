@@ -1,14 +1,12 @@
-#TO be the main code
 import CommInternet
 import Json
 import time
 
-
-
+#call relevant functions to set up wifi connection
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()
-#CommInternet.SendJson(data)
 
+#send data at periodic intervals
 while True:
     Json.send()
     time.sleep(20)

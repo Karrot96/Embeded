@@ -68,6 +68,7 @@ body {
     body .landing h1 {
       text-align: center; }
     body .landing button {
+      border-radius: 50%;
       width: 25%;
       border: none;
       cursor: pointer;
@@ -83,31 +84,66 @@ body {
       transition: 0.6s ease; }
       body .landing button:hover {
         background: #22a3bf; }
-    body .landing .text h1 {
-      height: 100%;
-      width: 100%;
+    body .landing .landingMain {
+      width: 100vw;
+      height: 100vh;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      position: fixed;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center;
+      align-items: center; }
+      body .landing .landingMain .circle {
+        background: #22a3bf;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%; }
+        body .landing .landingMain .circle h1 {
+          position: relative;
+          top: 94px;
+          border-radius: 50%;
+          width: 300px;
+          height: 300px;
+          text-align: center;
+          font-size: 28px; }
+  body .how_it_works {
+    background: #22a3bf;
+    height: 100vw;
+    width: 100vw; }
+    body .how_it_works h1 {
+      text-align: center;
+      font-size: 32px;
+      word-break: break-all;
+      line-break: auto; }
+  body .About_Us {
+    background: #22a3bf;
+    height: 100vw;
+    width: 100vw; }
+    body .About_Us h1 {
+      text-align: center;
+      font-size: 32px;
+      word-break: break-all;
+      line-break: auto; }
+    body .About_Us h2 {
+      text-align: left;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      font-size: 12pt; }
-    body .landing .text h2 {
-      height: 100%;
-      width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      position: fixed;
-      -webkit-box-align: left;
-      -ms-flex-align: left;
-      align-items: left;
+      font-size: 12px;
+      word-break: break-all;
+      line-break: auto; }
+    body .About_Us h3 {
+      text-align: center;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      font-size: 12pt; }
+      font-size: 12px;
+      word-break: break-all;
+      line-break: auto; }

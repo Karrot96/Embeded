@@ -4,6 +4,7 @@ import machine
 import Json
 import time
 import Sensor
+<<<<<<< HEAD
 import subscribe
 import ujson as json
 def sub_cb(topic, msg):
@@ -40,12 +41,18 @@ def Main(server="localhost"):
 
 
     c.disconnect()
+=======
+>>>>>>> 6cb304b84b5cebae945278992e912bde44feb479
 
 def debug():
     debugJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
     CommInternet.SendJson(debugJson)
+<<<<<<< HEAD
     while True:
         Sub()
+=======
+    
+>>>>>>> 6cb304b84b5cebae945278992e912bde44feb479
 #call relevant functions to set up wifi connection
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()

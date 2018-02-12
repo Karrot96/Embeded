@@ -9,7 +9,7 @@ CommInternet.ConnectWifi()
 
 #send data at periodic intervals
 while True:
-    if Sensor.fog() == True:
+    #if Sensor.fog() == True:
         Json.send()
         time.sleep(20)
     

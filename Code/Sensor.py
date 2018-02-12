@@ -49,8 +49,7 @@ def humidity():
 
 def fog():
     if humidity == 100:
-        fog = True
+        return True
     else:
-        fog = False
+        return False
     
-    return fog

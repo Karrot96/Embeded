@@ -2,9 +2,11 @@ import CommInternet
 import Json
 import time
 import Sensor
+
 def debug():
     debugJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
     CommInternet.SendJson(debugJson)
+    
 #call relevant functions to set up wifi connection
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()

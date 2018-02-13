@@ -8,7 +8,7 @@ import subscribe
 import ujson as json
 
 def demist():
-    
+    digitalWrite(Pin(2), 0)
 
 def sub_cb(topic, msg):
     x = json.loads(msg)

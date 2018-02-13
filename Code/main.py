@@ -8,8 +8,9 @@ import subscribe
 import ujson as json
 
 def demist():
-    pinMode(2, OUTPUT)
-    digitalWrite(2, 0)
+    p2 = Pin(2, Pin.OUT)
+    p2.off()
+    time.sleep(3000)
 
 def sub_cb(topic, msg):
     x = json.loads(msg)

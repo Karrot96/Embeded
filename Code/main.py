@@ -9,63 +9,46 @@ import subscribe
 import ujson as json
 
 def demist():
-    global Demisted
     p2 = Pin(2, Pin.OUT)
     while (Sensor.humidity() > 75):
         p2.off()    # pin is active low
         time.sleep(30000)
     if (Sensor.humidity() <= 75):
         p2.on()
-        Demisted = True
+        Json.send()
     else:
         demist()
 
 def sub_cb(topic, msg):
     global x
+    print("here")
     x = json.loads(msg)
-<<<<<<< HEAD
-    if (x['RemoveFog'] == "true"):
-        demist()
-    print((topic, x['RemoveFog']))
-
-def Sub(server="localhost"):
-    global Demisted
-=======
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
     global x
->>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
     c.subscribe(b"ESYS/netball")
     while True:
-        if False:
-            # Blocking wait for message
-            c.wait_msg()
-        else:
-            # Non-blocking wait for message
-            c.check_msg()
-<<<<<<< HEAD
-            if Demisted:
-                Json.send()
-                Demisted = False
-=======
-            if(x['RemoveFog'] == "true"):
-                demist()
->>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
-            # Then need to sleep to avoid 100% CPU usage (in a real
-            # app other useful actions would be performed instead)
-            time.sleep(1)
+        # Non-blocking wait for message
+        print("Waiting")
+        c.check_msg()
+        print("Waiting")
+        if(x['RemoveFog'] == "true"):
+            demist()
+            x['RemoveFog'] = "false"
+            c.disconnect()
+            c.connect()
+            c.subscribe(b"ESYS/netball")
+        # Then need to sleep to avoid 100% CPU usage (in a real
+        # app other useful actions would be performed instead)
+        time.sleep(4)
 
-    c.disconnect()
+
 def Main(server="localhost"):
-<<<<<<< HEAD
-    global Demisted
-=======
     global x
->>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -73,26 +56,22 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
-<<<<<<< HEAD
-            if Demisted:
-                Json.send()
-                Demisted = False
-=======
+            Json.send()
             if(x['RemoveFog'] == "true"):
                 demist()
->>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
-            Json.send()
             time.sleep(5)
 
 
     c.disconnect()
 
 def debug():
+    global x
     print("Temperature is: " + str(Sensor.temp()) + " Degrees")
     print("Humidity is: " +str(Sensor.humidity()) + "%")
     print("Setting humidity to 100.")
     debugJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
     CommInternet.SendJson(debugJson)
+    x = json.loads(debugJson)
     Sub()
 
 #call relevant functions to set up wifi connection

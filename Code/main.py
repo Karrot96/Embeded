@@ -1,6 +1,7 @@
 import CommInternet
 from umqtt.simple import MQTTClient
 import machine
+from machine import Pin
 import Json
 import time
 import Sensor
@@ -8,23 +9,25 @@ import subscribe
 import ujson as json
 
 def demist():
+    global Demisted
+    p2 = Pin(2, Pin.OUT)
     while (Sensor.humidity() > 75):
-        p2 = Pin(2, Pin.OUT)
         p2.off()    # pin is active low
         time.sleep(30000)
     if (Sensor.humidity() <= 75):
         p2.on()
-        Json.send()
+        Demisted = True
     else:
         demist()
 
 def sub_cb(topic, msg):
     x = json.loads(msg)
-    if (x['Remove Fog'] == "true"):
+    if (x['RemoveFog'] == "true"):
         demist()
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
+    global Demisted
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -36,12 +39,16 @@ def Sub(server="localhost"):
         else:
             # Non-blocking wait for message
             c.check_msg()
+            if Demisted:
+                Json.send()
+                Demisted = False
             # Then need to sleep to avoid 100% CPU usage (in a real
             # app other useful actions would be performed instead)
             time.sleep(1)
 
     c.disconnect()
 def Main(server="localhost"):
+    global Demisted
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -49,6 +56,9 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
+            if Demisted:
+                Json.send()
+                Demisted = False
             Json.send()
             time.sleep(5)
 
@@ -64,6 +74,8 @@ def debug():
     Sub()
 
 #call relevant functions to set up wifi connection
+global Demisted
+Demisted = False
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()
 text = input("enter 'd' to debug: ")

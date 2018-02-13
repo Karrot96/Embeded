@@ -64,14 +64,14 @@ def Main(server="localhost"):
 
     c.disconnect()
 
-def debug():
+def demo():
     global x
     print("Temperature is: " + str(Sensor.temp()) + " Degrees")
     print("Humidity is: " +str(Sensor.humidity()) + "%")
     print("Setting humidity to 100.")
-    debugJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
-    CommInternet.SendJson(debugJson)
-    x = json.loads(debugJson)
+    demoJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
+    CommInternet.SendJson(demoJson)
+    x = json.loads(demoJson)
     Sub()
 
 #call relevant functions to set up wifi connection
@@ -79,9 +79,9 @@ global Demisted
 Demisted = False
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()
-text = input("enter 'd' to debug: ")
+text = input("enter 'd' to demo: ")
 if text == 'd':
-    debug()
+    demo()
 else:
 #send data at periodic intervals
     Main()

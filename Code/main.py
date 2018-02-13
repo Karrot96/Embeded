@@ -6,8 +6,10 @@ import time
 import Sensor
 import subscribe
 import ujson as json
+
+
 def sub_cb(topic, msg):
-    x=json.loads(msg)
+    global x=json.loads(msg)
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):

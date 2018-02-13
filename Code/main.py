@@ -7,8 +7,13 @@ import Sensor
 import subscribe
 import ujson as json
 
+def demist():
+    
+
 def sub_cb(topic, msg):
     x = json.loads(msg)
+    if (x['Remove Fog'] == "true"):
+        
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):

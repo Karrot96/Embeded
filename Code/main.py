@@ -56,9 +56,14 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
-            Json.send()
+            if Sensor.fog():
+                Json.send()
             if(x['RemoveFog'] == "true"):
                 demist()
+                x['RemoveFog'] = "false"
+                c.disconnect()
+                c.connect()
+                c.subscribe(b"ESYS/netball")
             time.sleep(5)
 
 
@@ -75,8 +80,9 @@ def demo():
     Sub()
 
 #call relevant functions to set up wifi connection
-global Demisted
-Demisted = False
+global x
+initialJson = json.dumps({'name':'fog' , 'value':-1 ,  'WindowFogged':False, 'RemoveFog': False})
+x = json.loads(initialJson)
 CommInternet.DisableAp()
 CommInternet.ConnectWifi()
 text = input("enter 'd' to demo: ")

@@ -48,6 +48,7 @@ def humidity():
     return humidity
 
 def fog():
+    print(str(humidity()) + "%")
     if humidity() == 100:
         return True
     else:

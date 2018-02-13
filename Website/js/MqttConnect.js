@@ -109,6 +109,8 @@ app.get('/', function (req, res) {
   }
 })
 
+
+//On a submit of a form tell the device to turn on the ability to demist the car
 app.post('/', function (req, res) {
   //var client  = mqtt.connect('http://192.168.0.10')
   var x = '{"RemoveFog": "true", "WindowFogged": "true", "name":"fog" , "value": "100" }'

@@ -11,7 +11,12 @@ def demist():
     while (Sensor.humidity() > 75):
         p2 = Pin(2, Pin.OUT)
         p2.off()    # pin is active low
-        
+        time.sleep(30000)
+    if (Sensor.humidity() <= 75):
+        p2.on()
+        Json.send()
+    else:
+        demist()
 
 def sub_cb(topic, msg):
     x = json.loads(msg)

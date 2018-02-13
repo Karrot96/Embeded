@@ -19,9 +19,8 @@ def demist():
         demist()
 
 def sub_cb(topic, msg):
+    global x
     x = json.loads(msg)
-    if (x['Remove Fog'] == "true"):
-        demist()
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
@@ -36,6 +35,8 @@ def Sub(server="localhost"):
         else:
             # Non-blocking wait for message
             c.check_msg()
+            if(x['RemoveFog'] == "true"):
+                demist()
             # Then need to sleep to avoid 100% CPU usage (in a real
             # app other useful actions would be performed instead)
             time.sleep(1)
@@ -49,6 +50,8 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
+            if(x['RemoveFog'] == "true"):
+                demist()
             Json.send()
             time.sleep(5)
 

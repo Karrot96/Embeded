@@ -7,9 +7,8 @@ import Sensor
 import subscribe
 import ujson as json
 
-
 def sub_cb(topic, msg):
-    global x=json.loads(msg)
+    x = json.loads(msg)
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
@@ -44,6 +43,9 @@ def Main(server="localhost"):
     c.disconnect()
 
 def debug():
+    print("Temperature is: " + str(Sensor.temp()) + " Degrees")
+    print("Humidity is: " +str(Sensor.humidity()) + "%")
+    print("Setting humidity to 100.")
     debugJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
     CommInternet.SendJson(debugJson)
     Sub()

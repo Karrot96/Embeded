@@ -25,8 +25,8 @@ def temp():
 
     #convert raw value to real world value
     temp = (175.72*tempInt/65536)-46.85
-
-    print(temp)
+    return temp
+    #print(temp)
 
 def humidity():
     i2cPort.writeto(address[0],bytearray([0xE3]))
@@ -43,7 +43,7 @@ def humidity():
     #convert raw value to real world value
     humidity = ((125*humidityInt)/65536)-6
 
-    print(str(humidity) + "%")
+    #print(str(humidity) + "%")
 
     return humidity
 

@@ -8,14 +8,15 @@ import subscribe
 import ujson as json
 
 def demist():
-    p2 = Pin(2, Pin.OUT)
-    p2.off()
-    time.sleep(3000)
+    while (Sensor.humidity() > 75):
+        p2 = Pin(2, Pin.OUT)
+        p2.off()    # pin is active low
+        
 
 def sub_cb(topic, msg):
     x = json.loads(msg)
     if (x['Remove Fog'] == "true"):
-        
+        demist()
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):

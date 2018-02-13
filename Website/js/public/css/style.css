@@ -1,5 +1,5 @@
 body{
-    background: #00FFFF
+    background: #bbc2ce
 }
 .container{
     width: 100vw;
@@ -7,12 +7,37 @@ body{
 }
 input{
     border-radius: 100px;
+    background: #00ffff;
     width: 200px;
     height: 200px;
     border: none;
     cursor: pointer;
     outline: none;
-    padding: 20px;
     display: block;
     margin: 50px auto;
+}
+input:hover{
+    background: #1ddeff;
+}
+input {
+  background: #0099ff;
+  background-image: -webkit-linear-gradient(top, #0099ff, #0f8ad6);
+  background-image: -moz-linear-gradient(top, #0099ff, #0f8ad6);
+  background-image: -ms-linear-gradient(top, #0099ff, #0f8ad6);
+  background-image: -o-linear-gradient(top, #0099ff, #0f8ad6);
+  background-image: linear-gradient(to bottom, #0099ff, #0f8ad6);
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+input:hover {
+  background: #0a9bf5;
+  background-image: -webkit-linear-gradient(top, #0a9bf5, #2972a3);
+  background-image: -moz-linear-gradient(top, #0a9bf5, #2972a3);
+  background-image: -ms-linear-gradient(top, #0a9bf5, #2972a3);
+  background-image: -o-linear-gradient(top, #0a9bf5, #2972a3);
+  background-image: linear-gradient(to bottom, #0a9bf5, #2972a3);
+  text-decoration: none;
 }

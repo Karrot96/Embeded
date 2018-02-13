@@ -24,6 +24,7 @@ def sub_cb(topic, msg):
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
+    global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -43,6 +44,7 @@ def Sub(server="localhost"):
 
     c.disconnect()
 def Main(server="localhost"):
+    global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()

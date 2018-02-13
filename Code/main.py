@@ -21,13 +21,21 @@ def demist():
         demist()
 
 def sub_cb(topic, msg):
+    global x
     x = json.loads(msg)
+<<<<<<< HEAD
     if (x['RemoveFog'] == "true"):
         demist()
     print((topic, x['RemoveFog']))
 
 def Sub(server="localhost"):
     global Demisted
+=======
+    print((topic, x['RemoveFog']))
+
+def Sub(server="localhost"):
+    global x
+>>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -39,16 +47,25 @@ def Sub(server="localhost"):
         else:
             # Non-blocking wait for message
             c.check_msg()
+<<<<<<< HEAD
             if Demisted:
                 Json.send()
                 Demisted = False
+=======
+            if(x['RemoveFog'] == "true"):
+                demist()
+>>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
             # Then need to sleep to avoid 100% CPU usage (in a real
             # app other useful actions would be performed instead)
             time.sleep(1)
 
     c.disconnect()
 def Main(server="localhost"):
+<<<<<<< HEAD
     global Demisted
+=======
+    global x
+>>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
     c.connect()
@@ -56,9 +73,14 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
+<<<<<<< HEAD
             if Demisted:
                 Json.send()
                 Demisted = False
+=======
+            if(x['RemoveFog'] == "true"):
+                demist()
+>>>>>>> 28f646503fc1d0c98b3f42469e853b3f9380817c
             Json.send()
             time.sleep(5)
 

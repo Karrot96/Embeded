@@ -136,8 +136,29 @@ body {
   body .testimonials {
     height: 100vh;
     width: 100vw;
-    background: url(../img/testimonials.jpg) no-repeat center center fixed;
-    background-size: cover; }
+    background: #003300; }
+    body .testimonials h1 {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: 80px;
+      color: #FFFF00; }
+    body .testimonials h2 {
+      padding: 20px;
+      color: #FFFFFF;
+      font-style: italic;
+      font: Courier;
+      font-size: 32px; }
+    body .testimonials h3 {
+      padding: 20px;
+      color: #FFFFFF;
+      font-style: italic;
+      font: Courier;
+      font-size: 32px;
+      text-align: right; }
   body .menu {
     display: none;
     position: fixed;

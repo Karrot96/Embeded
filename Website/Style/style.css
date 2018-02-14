@@ -113,7 +113,7 @@ body {
           border-color: #FFFFFF;
           border-width: 5px;
           border-style: solid;
-          background: url(../img/Sophia.jpeg) no-repeat center center;
+          background: url(../img/Sophia.jpg) no-repeat center center;
           background-size: cover; }
       body .about .right .alexRound {
         width: 30%;
@@ -279,12 +279,6 @@ body {
         body .pricing .sections .sensor h2 {
           color: #FFFF00;
           font-size: 38px;
-          text-align: center; }
-        body .pricing .sections .sensor h3 {
-          position: relative;
-          bottom: 11px;
-          color: #FFFF00;
-          font-size: 42px;
           text-align: center; }
         body .pricing .sections .sensor p {
           text-align: center;

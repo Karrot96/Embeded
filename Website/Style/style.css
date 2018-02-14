@@ -142,6 +142,7 @@ body {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      padding: 10px;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -149,14 +150,14 @@ body {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center; }
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline; }
       body .pricing .sections .sensor {
         width: 30%; }
         body .pricing .sections .sensor h2 {
           color: #FFFF00;
-          font-size: 42px;
+          font-size: 38px;
           text-align: center; }
         body .pricing .sections .sensor p {
           text-align: center;

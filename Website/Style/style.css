@@ -67,6 +67,16 @@ body {
     width: 100vw;
     background: url(../img/how_it_works.jpg) no-repeat center center fixed;
     background-size: cover; }
+    body .how_it_works h1 {
+      font-size: 100px;
+      padding-top: 100px;
+      padding-right: 50px;
+      text-align: right; }
+    body .how_it_works h2 {
+      font-size: 100px;
+      padding-top: 0px;
+      padding-right: 50px;
+      text-align: right; }
   body .login {
     height: 100vh;
     width: 100vw;

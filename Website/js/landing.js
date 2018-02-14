@@ -10,3 +10,12 @@ function landingClearFog(){
 
     },750);
 }
+window.onload = function(){
+    x = window.location.hash
+    if (x ==""){
+        y=document.getElementsByClassName('FogOverlay')
+        y[0].style.display = "block"
+        z=document.getElementsByClassName('menu')
+        z[0].style.display = 'none'
+    }
+}

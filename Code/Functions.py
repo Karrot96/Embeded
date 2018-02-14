@@ -1,7 +1,7 @@
-from machine import I2C, Pin
-import time
 import machine
-from machine import Pin
+from machine import I2C, Pin
+from umqtt.simple import MQTTClient
+import time
 import ujson as json
 import network
 

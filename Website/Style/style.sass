@@ -200,7 +200,7 @@ body
 
     .menu
         //Used to stop display of menu on landing screen
-        display: none
+        display: block
         z-index: 999
         position: fixed
         width: 100vw
@@ -253,6 +253,7 @@ body
         background: url(../img/landing.jpg) no-repeat center center fixed
         background-size: cover
         .FogOverlay
+            display: none
             &::after
                 background: url(../img/landingblur.jpg) no-repeat center center fixed
                 background-size: cover

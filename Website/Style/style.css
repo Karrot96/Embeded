@@ -242,7 +242,7 @@ body {
       font: Courier;
       font-size: 32px; }
   body .menu {
-    display: none;
+    display: block;
     z-index: 999;
     position: fixed;
     width: 100vw;
@@ -297,6 +297,7 @@ body {
     background: url(../img/landing.jpg) no-repeat center center fixed;
     background-size: cover; }
     body .landing .FogOverlay {
+      display: none;
       height: 100%;
       width: 100%;
       -webkit-transition: 2s ease;

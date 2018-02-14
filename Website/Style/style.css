@@ -81,10 +81,11 @@ body {
     body .how_it_works h3 {
       font-size: 20px;
       padding-top: 0px;
-      padding-right: 50px;
+      padding-right: 60px;
       text-align: right;
       color: #FFFFFF;
-      font: italic; }
+      font: italic;
+      padding-left: 600px; }
   body .login {
     height: 100vh;
     width: 100vw;

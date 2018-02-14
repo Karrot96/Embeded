@@ -203,6 +203,29 @@ body {
     height: 100vh;
     width: 100vw;
     background: #001100; }
+    body .testimonials .title {
+      width: 100vw;
+      padding: 2.5vh 0vh; }
+      body .testimonials .title h1 {
+        font-size: 80px;
+        color: #FFFF00;
+        text-align: center; }
+    body .testimonials .quotes {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 90vw;
+      padding: 0vw 5vw;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+      body .testimonials .quotes .shiftRight {
+        -ms-flex-item-align: end;
+        align-self: flex-end; }
     body .testimonials h1 {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -218,13 +241,6 @@ body {
       font-style: italic;
       font: Courier;
       font-size: 32px; }
-    body .testimonials h3 {
-      padding: 20px;
-      color: #FFFFFF;
-      font-style: italic;
-      font: Courier;
-      font-size: 32px;
-      text-align: right; }
   body .menu {
     display: none;
     z-index: 999;

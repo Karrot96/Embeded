@@ -9,6 +9,24 @@ body {
     width: 100vw;
     background: url(../img/about_us.jpg) no-repeat center center fixed;
     background-size: cover; }
+    body .about h1 {
+      color: #FFFF00;
+      text-align: right;
+      font-size: 80px;
+      padding-right: 50px;
+      padding-top: 200px; }
+    body .about h2 {
+      color: #FFFFFF;
+      text-align: right;
+      font-size: 40px;
+      padding-right: 50px;
+      padding-top: 0px; }
+    body .about h3 {
+      color: #FFFFFF;
+      text-align: right;
+      font-size: 30px;
+      padding-right: 50px;
+      padding-top: 0px; }
   body .contact {
     height: 100vh;
     width: 100vw;
@@ -136,7 +154,7 @@ body {
   body .testimonials {
     height: 100vh;
     width: 100vw;
-    background: #003300; }
+    background: #001100; }
     body .testimonials h1 {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -296,7 +314,7 @@ body {
           text-align: center;
           font-size: 28px; }
   body .About_Us {
-    background: #22a3bf;
+    background: #001100;
     height: 100vw;
     width: 100vw; }
     body .About_Us h1 {

@@ -10,26 +10,147 @@ body {
   body .about {
     height: 100vh;
     width: 100vw;
-    background: url(../img/about_us.jpg) no-repeat center center fixed;
-    background-size: cover; }
-    body .about h1 {
-      color: #FFFF00;
-      text-align: right;
-      font-size: 80px;
-      padding-right: 50px;
-      padding-top: 200px; }
-    body .about h2 {
-      color: #FFFFFF;
-      text-align: right;
-      font-size: 40px;
-      padding-right: 50px;
-      padding-top: 0px; }
+    background: #001100;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    body .about .left {
+      min-width: 35%;
+      padding-right: 15px;
+      max-height: 40%;
+      display: block;
+      background: #FFFF00; }
+      body .about .left h1 {
+        color: #000000;
+        text-align: right;
+        font-size: 80px;
+        margin: 10px 0px; }
+      body .about .left p {
+        color: #000000;
+        text-align: right;
+        font-size: 30px;
+        margin: 0px; }
+    body .about .right {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      body .about .right .Team {
+        width: 100%; }
+      body .about .right h1 {
+        color: #FFFF00;
+        text-align: center;
+        font-size: 80px;
+        margin: 0px; }
+      body .about .right p {
+        color: #FFFFFF;
+        font-size: 28px;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0px; }
+      body .about .right .jonnyRound {
+        width: 30%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        float: left; }
+        body .about .right .jonnyRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Jonny.jpg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .sophiaRound {
+        width: 30%;
+        float: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        body .about .right .sophiaRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Sophia.jpeg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .alexRound {
+        width: 30%;
+        float: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        body .about .right .alexRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Alex.jpg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .text p {
+        color: #FFFFFF;
+        padding-top: 20px;
+        font-weight: 200;
+        font-size: 20px; }
     body .about h3 {
       color: #FFFFFF;
-      text-align: right;
-      font-size: 30px;
-      padding-right: 50px;
-      padding-top: 0px; }
+      width: 80%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 100; }
   body #contact {
     position: relative;
     top: -134px; }
@@ -73,41 +194,49 @@ body {
     top: -67px; }
   body .how_it_works {
     height: 100vh;
-    width: 100vw;
-    background: #001100; }
+    width: 90vw;
+    background: #001100;
+    padding: 0vw 5vw; }
+    body .how_it_works .imgLeft {
+      width: 40%;
+      float: left;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      body .how_it_works .imgLeft img {
+        max-width: 100%; }
+    body .how_it_works .textRight {
+      width: 45%;
+      float: right;
+      text-align: left; }
     body .how_it_works h1 {
       font-size: 100px;
       padding-top: 100px;
-      padding-right: 50px;
+      padding-right: 150px;
       text-align: right;
       color: #FFFF00; }
     body .how_it_works h2 {
       color: #FFFF00;
       font-size: 100px;
       padding-top: 0px;
-      padding-right: 50px;
+      padding-right: 100px;
       text-align: right; }
     body .how_it_works h3 {
       font-size: 20px;
       padding-top: 0px;
       padding-right: 60px;
-      text-align: right;
       color: #FFFFFF;
-<<<<<<< HEAD
       font: italic; }
   body #pricing {
     position: relative;
     top: -67px; }
-=======
-      font: italic;
-      padding-left: 550px;
-      padding-bottom: 10px; }
-  body .login {
-    height: 100vh;
-    width: 100vw;
-    background: url(../img/login.jpg) no-repeat center center fixed;
-    background-size: cover; }
->>>>>>> d584e4028c3f166f173ef624a27f694a10d28ba5
   body .pricing {
     height: 100vh;
     width: 100vw;
@@ -134,6 +263,7 @@ body {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      padding: 10px;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -141,14 +271,14 @@ body {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center; }
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline; }
       body .pricing .sections .sensor {
         width: 30%; }
         body .pricing .sections .sensor h2 {
           color: #FFFF00;
-          font-size: 42px;
+          font-size: 38px;
           text-align: center; }
         body .pricing .sections .sensor h3 {
           position: relative;
@@ -200,6 +330,29 @@ body {
     height: 100vh;
     width: 100vw;
     background: #001100; }
+    body .testimonials .title {
+      width: 100vw;
+      padding: 2.5vh 0vh; }
+      body .testimonials .title h1 {
+        font-size: 80px;
+        color: #FFFF00;
+        text-align: center; }
+    body .testimonials .quotes {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 90vw;
+      padding: 0vw 5vw;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+      body .testimonials .quotes .shiftRight {
+        -ms-flex-item-align: end;
+        align-self: flex-end; }
     body .testimonials h1 {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -215,15 +368,8 @@ body {
       font-style: italic;
       font: Courier;
       font-size: 32px; }
-    body .testimonials h3 {
-      padding: 20px;
-      color: #FFFFFF;
-      font-style: italic;
-      font: Courier;
-      font-size: 32px;
-      text-align: right; }
   body .menu {
-    display: none;
+    display: block;
     z-index: 999;
     position: fixed;
     width: 100vw;
@@ -278,6 +424,7 @@ body {
     background: url(../img/landing.jpg) no-repeat center center fixed;
     background-size: cover; }
     body .landing .FogOverlay {
+      display: none;
       height: 100%;
       width: 100%;
       -webkit-transition: 2s ease;

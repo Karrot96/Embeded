@@ -19,35 +19,113 @@ body
     .about
         height: 100vh
         width: 100vw
-        background: url(../img/about_us.jpg) no-repeat center center fixed
+        background: $Back2
         background-size: cover
-        h1
-            color: #FFFF00
-            text-align: right
-            font-size: 80px
-            padding-right: 50px
-            padding-top: 200px
-        h2
-            color: #FFFFFF
-            text-align: right
-            font-size: 40px
-            padding-right: 50px
-            padding-top: 0px
+        display: flex
+        flex-direction: row
+        align-items: center
+        .left
+            min-width: 35%
+            padding-right: 15px
+            max-height: 40%
+            display: block
+            background: #FFFF00
+            h1
+                color: #000000
+                text-align: right
+                font-size: 80px
+                margin: 10px 0px
+            p
+                color: #000000
+                text-align: right
+                font-size: 30px
+                margin: 0px
+        .right
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .Team
+                width: 100%
+            h1
+                color: #FFFF00
+                text-align: center
+                font-size: 80px
+                margin: 0px
+            p
+                color: #FFFFFF
+                font-size: 28px
+                text-align: left
+                padding-left: 20px
+                margin: 0px
+            .jonnyRound
+                width: 30%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                float: left
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Jonny.jpg) no-repeat center center
+                    background-size: cover
+            .sophiaRound
+                width: 30%
+                float: left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Sophia.jpeg) no-repeat center center
+                    background-size: cover
+            .alexRound
+                width: 30%
+                float: left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Alex.jpg) no-repeat center center
+                    background-size: cover
+            .text
+                p
+                    color: #FFFFFF
+                    padding-top: 20px
+                    font-weight: 200
+                    font-size: 20px
         h3
             color: #FFFFFF
-            text-align: right
-            font-size: 30px
-            padding-right: 50px
-            padding-top: 0px
-<<<<<<< HEAD
+            width: 80%
+            text-align: center
+            font-size: 20px
+            font-weight: 100
+
+
     #contact
         position: relative
         top: -134px
-=======
-
-
-
->>>>>>> d584e4028c3f166f173ef624a27f694a10d28ba5
     .contact
         height: 100vh
         width: 100vw
@@ -79,42 +157,43 @@ body
         top: -67px
     .how_it_works
         height: 100vh
-        width: 100vw
-
+        width: 90vw
         background: $Back2
+        padding: 0vw 5vw
+        .imgLeft
+            width: 40%
+            float: left
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            img
+                max-width: 100%
+        .textRight
+            width: 45%
+            float: right
+            text-align: left
         h1
             font-size: 100px
             padding-top: 100px
-            padding-right: 50px
+            padding-right: 150px
             text-align: right
             color: #FFFF00
         h2
             color: #FFFF00
             font-size: 100px
             padding-top: 0px
-            padding-right: 50px
+            padding-right: 100px
             text-align: right
         h3
             font-size: 20px
             padding-top: 0px
             padding-right: 60px
-            text-align: right
             color: #FFFFFF
             font: italic
-<<<<<<< HEAD
     #pricing
         position: relative
         top: -67px
-=======
-            padding-left: 550px
-            padding-bottom: 10px
-
-    .login
-        height: 100vh
-        width: 100vw
-        background: url(../img/login.jpg) no-repeat center center fixed
-        background-size: cover
->>>>>>> d584e4028c3f166f173ef624a27f694a10d28ba5
     .pricing
         height: 100vh
         width: 100vw
@@ -130,14 +209,15 @@ body
         .sections
             width: 80%
             display: flex
+            padding: 10px
             flex-direction: row
             justify-content: center
-            align-items: center
+            align-items: baseline
             .sensor
                 width: 30%
                 h2
                     color: #FFFF00
-                    font-size: 42px
+                    font-size: 38px
                     text-align: center
                 p
                     text-align: center
@@ -174,6 +254,21 @@ body
         height: 100vh
         width: 100vw
         background: $Back2
+        .title
+            width: 100vw
+            padding: 2.5vh 0vh
+            h1
+                font-size: 80px
+                color: #FFFF00
+                text-align: center
+        .quotes
+            display: flex
+            width: 90vw
+            padding: 0vw 5vw
+            flex-direction: column
+            justify-content: flex-start
+            .shiftRight
+                align-self: flex-end
         h1
             justify-content: center
             align-items: center
@@ -185,18 +280,11 @@ body
             font-style: italic
             font: Courier
             font-size: 32px
-        h3
-            padding: 20px
-            color: #FFFFFF
-            font-style: italic
-            font: Courier
-            font-size: 32px
-            text-align: right
 
 
     .menu
         //Used to stop display of menu on landing screen
-        display: none
+        display: block
         z-index: 999
         position: fixed
         width: 100vw
@@ -249,6 +337,7 @@ body
         background: url(../img/landing.jpg) no-repeat center center fixed
         background-size: cover
         .FogOverlay
+            display: none
             &::after
                 background: url(../img/landingblur.jpg) no-repeat center center fixed
                 background-size: cover

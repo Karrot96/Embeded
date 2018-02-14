@@ -47,8 +47,8 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
-            if Functions.fog(i2cPort,address):
-                Functions.send()
+            if Functions.fog(i2cPort, address):
+                Functions.send(i2cPort, address)
             if(x['RemoveFog'] == "true"):
                 Functions.demist(i2cPort, address)
                 x['RemoveFog'] = "false"

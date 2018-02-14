@@ -9,7 +9,7 @@ i2cPort=I2C(scl=Pin(5), sda=Pin(4), freq=100000)
 i2cPort.start()
 
 #detects the address of the i2c device dynamically
-address = i2cPort.scan()   
+address = i2cPort.scan()
 
 def sub_cb(topic, msg):
     global x
@@ -17,7 +17,8 @@ def sub_cb(topic, msg):
     x = json.loads(msg)
     print((topic, x['RemoveFog']))
 
-def Sub(server="localhost"):
+def Sub(i2cPort, address):
+    server="localhost",
     global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
@@ -29,7 +30,7 @@ def Sub(server="localhost"):
         c.check_msg()
         print("Waiting")
         if(x['RemoveFog'] == "true"):
-            Functions.demist(i2cPort, address)
+            Functions.demist(i2cPort, address, True)
             x['RemoveFog'] = "false"
             c.disconnect()
             c.connect()
@@ -38,7 +39,8 @@ def Sub(server="localhost"):
         # app other useful actions would be performed instead)
         time.sleep(4)
 
-def Main(server="localhost"):
+def Main(i2cPort, address):
+    server="localhost"
     global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
@@ -50,7 +52,7 @@ def Main(server="localhost"):
             if Functions.fog(i2cPort, address):
                 Functions.send(i2cPort, address)
             if(x['RemoveFog'] == "true"):
-                Functions.demist(i2cPort, address)
+                Functions.demist(i2cPort, address, False)
                 x['RemoveFog'] = "false"
                 c.disconnect()
                 c.connect()
@@ -59,7 +61,7 @@ def Main(server="localhost"):
 
     c.disconnect()
 
-def demo():
+def demo(i2cPort, address):
     global x
     print("Temperature is: " + str(Functions.temp(i2cPort, address)) + " Degrees")
     print("Humidity is: " +str(Functions.humidity(i2cPort, address)) + "%")
@@ -67,7 +69,7 @@ def demo():
     demoJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
     Functions.SendJson(demoJson)
     x = json.loads(demoJson)
-    Sub()
+    Sub(i2cPort, address)
 
 #call relevant functions to set up wifi connection
 global x
@@ -77,7 +79,7 @@ Functions.DisableAp()
 Functions.ConnectWifi()
 text = input("enter 'd' to demo: ")
 if text == 'd':
-    demo()
+    demo(i2cPort, address)
 else:
 #send data at periodic intervals
     Main()

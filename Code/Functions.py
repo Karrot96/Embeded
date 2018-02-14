@@ -5,17 +5,27 @@ import time
 import ujson as json
 import network
 
-def demist(i2cPort, address):
+def demist(i2cPort, address, Demo):
     p2 = Pin(2, Pin.OUT)
-    while (humidity(i2cPort, address) > 75):
-        p2.off()    # pin is active low
-        time.sleep(30000)
-    if (humidity(i2cPort, address) <= 75):
-        p2.on()
-        send()
+    if Demo:
+        p2.off()
+        print ("Here")# pin is active low
+        time.sleep(5)
+        if (humidity(i2cPort, address) <= 75):
+            p2.on()
+            send(i2cPort, address)
+        else:
+            demist(i2cPort, address, False)
     else:
-        demist(i2cPort, address)
-        
+        while (humidity(i2cPort, address) > 75):
+            p2.off()    # pin is active low
+            time.sleep(30)
+        if (humidity(i2cPort, address) <= 75):
+            p2.on()
+            send(i2cPort, address)
+        else:
+            demist(i2cPort, address, Demo)
+
 def temp(i2cPort, address): #check passing of variable
     i2cPort.writeto(address[0],bytearray([0xF3]))
 
@@ -32,7 +42,7 @@ def temp(i2cPort, address): #check passing of variable
     temp = (175.72*tempInt/65536)-46.85
 
     #print(temp)
-    
+
     return temp
 
 def humidity(i2cPort, address):
@@ -59,7 +69,7 @@ def fog(i2cPort, address):
     if (humidity(i2cPort, address) == 100):
         return True
     else:
-        return False        
+        return False
 
 #convert data to json
 def jsonify(i2cPort, address):
@@ -68,7 +78,7 @@ def jsonify(i2cPort, address):
 #send json data using MQTT
 def send(i2cPort, address):
     SendJson(jsonify(i2cPort, address))
-    
+
 #disable network
 def DisableAp():
     ap_if = network.WLAN(network.AP_IF)

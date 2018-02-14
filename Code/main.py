@@ -1,31 +1,22 @@
-import CommInternet
 from umqtt.simple import MQTTClient
 import machine
-from machine import Pin
-import Json
+from machine import Pin, I2C
 import time
-import Sensor
-import subscribe
 import ujson as json
+import Functions
 
-def demist():
-    p2 = Pin(2, Pin.OUT)
-    while (Sensor.humidity() > 75):
-        p2.off()    # pin is active low
-        time.sleep(30000)
-    if (Sensor.humidity() <= 75):
-        p2.on()
-        Json.send()
-    else:
-        demist()
+i2cPort=I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+i2cPort.start()
+
+#detects the address of the i2c device dynamically
+address = i2cPort.scan()
 
 def sub_cb(topic, msg):
     global x
-    print("here")
     x = json.loads(msg)
     print((topic, x['RemoveFog']))
 
-def Sub(server="localhost"):
+def Sub(i2cPort, address):
     global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
@@ -33,11 +24,9 @@ def Sub(server="localhost"):
     c.subscribe(b"ESYS/netball")
     while True:
         # Non-blocking wait for message
-        print("Waiting")
         c.check_msg()
-        print("Waiting")
         if(x['RemoveFog'] == "true"):
-            demist()
+            Functions.demist(i2cPort, address, True)
             x['RemoveFog'] = "false"
             c.disconnect()
             c.connect()
@@ -46,8 +35,7 @@ def Sub(server="localhost"):
         # app other useful actions would be performed instead)
         time.sleep(4)
 
-
-def Main(server="localhost"):
+def Main(i2cPort, address):
     global x
     c = MQTTClient(machine.unique_id(), '192.168.0.10')
     c.set_callback(sub_cb)
@@ -56,38 +44,39 @@ def Main(server="localhost"):
     while True:
             # Non-blocking wait for message
             c.check_msg()
-            if Sensor.fog():
-                Json.send()
-            if(x['RemoveFog'] == "true"):
-                demist()
+            if Functions.fog(i2cPort, address):
+                Functions.send(i2cPort, address)
+            else if(x['RemoveFog'] == "true"):
+                Functions.demist(i2cPort, address, False)
                 x['RemoveFog'] = "false"
                 c.disconnect()
                 c.connect()
                 c.subscribe(b"ESYS/netball")
+            else if (x['WindowFogged'] == "true" && !Functions.fog(i2cPort,address)):
+                Functions.send(i2cPort, address)
             time.sleep(5)
-
 
     c.disconnect()
 
-def demo():
+def demo(i2cPort, address):
     global x
-    print("Temperature is: " + str(Sensor.temp()) + " Degrees")
-    print("Humidity is: " +str(Sensor.humidity()) + "%")
+    print("Temperature is: " + str(Functions.temp(i2cPort, address)) + " Degrees")
+    print("Humidity is: " +str(Functions.humidity(i2cPort, address)) + "%")
     print("Setting humidity to 100.")
     demoJson = json.dumps({'name':'fog' , 'value':100 ,  'WindowFogged':True, 'RemoveFog': False})
-    CommInternet.SendJson(demoJson)
+    Functions.SendJson(demoJson)
     x = json.loads(demoJson)
-    Sub()
+    Sub(i2cPort, address)
 
 #call relevant functions to set up wifi connection
 global x
 initialJson = json.dumps({'name':'fog' , 'value':-1 ,  'WindowFogged':False, 'RemoveFog': False})
 x = json.loads(initialJson)
-CommInternet.DisableAp()
-CommInternet.ConnectWifi()
+Functions.DisableAp()
+Functions.ConnectWifi()
 text = input("enter 'd' to demo: ")
 if text == 'd':
-    demo()
+    demo(i2cPort, address)
 else:
 #send data at periodic intervals
-    Main()
+    Main(i2cPort, address)

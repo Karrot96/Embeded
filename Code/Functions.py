@@ -5,19 +5,19 @@ import time
 import ujson as json
 import network
 
+# replicates turning on demister by turning on onboard blue LED when demist necessary
 def demist(i2cPort, address, Demo):
-    p2 = Pin(2, Pin.OUT)
+    p2 = Pin(2, Pin.OUT) #blue LED uses GPIO2 (pin 2)
     if Demo:
-        p2.off()
-        print ("Here")# pin is active low
+        p2.off() #note pin is active low
         time.sleep(5)
-        if (humidity(i2cPort, address) <= 75):
-            p2.on()
-            send(i2cPort, address)
+        if (humidity(i2cPort, address) <= 75): #check value of humidity to see if can stop demisting
+            p2.on() # turn off demister
+            send(i2cPort, address) #send new data
         else:
-            demist(i2cPort, address, False)
+            demist(i2cPort, address, False) #otherwise continue to demist
     else:
-        while (humidity(i2cPort, address) > 75):
+        while (humidity(i2cPort, address) > 75): # case for when not demo-ing but checking level of humidity
             p2.off()    # pin is active low
             time.sleep(30)
         if (humidity(i2cPort, address) <= 75):
@@ -26,7 +26,8 @@ def demist(i2cPort, address, Demo):
         else:
             demist(i2cPort, address, Demo)
 
-def temp(i2cPort, address): #check passing of variable
+# take temperature reading
+def temp(i2cPort, address):
     i2cPort.writeto(address[0],bytearray([0xF3]))
 
     #wait for write
@@ -45,6 +46,7 @@ def temp(i2cPort, address): #check passing of variable
 
     return temp
 
+# take humidity reading
 def humidity(i2cPort, address):
     i2cPort.writeto(address[0],bytearray([0xE3]))
 
@@ -60,10 +62,11 @@ def humidity(i2cPort, address):
     #convert raw value to real world value
     humidity = ((125*humidityInt)/65536)-6
 
-    #print(str(humidity) + "%")
+    print(str(humidity) + "%")
 
     return humidity
 
+# check for fog by seeing if humidity is at 100% (this is defined as the point where windscreen fog will occur from research)
 def fog(i2cPort, address):
     print(str(humidity(i2cPort, address)) + "%")
     if (humidity(i2cPort, address) == 100):

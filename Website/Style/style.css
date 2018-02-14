@@ -259,6 +259,8 @@ body {
     background-size: cover; }
     body .pricing h1 {
       font-size: 80px; }
+    body .pricing .bottom h3 {
+      font-size: 50px; }
     body .pricing .sections {
       width: 80%;
       display: -webkit-box;

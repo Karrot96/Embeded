@@ -62,12 +62,12 @@ def fog(i2cPort, address):
         return False        
 
 #convert data to json
-def jsonify():
+def jsonify(i2cPort, address):
     return json.dumps({'name':'fog' , 'value':humidity(i2cPort, address) ,  'WindowFogged':fog(i2cPort, address), 'RemoveFog': False})
 
 #send json data using MQTT
-def send():
-    SendJson(jsonify())
+def send(i2cPort, address):
+    SendJson(jsonify(i2cPort, address))
     
 #disable network
 def DisableAp():

@@ -48,10 +48,22 @@ HTML
         #how_it_works
             .how_it_works
                 .imgLeft
-                    img(src="img/user_diagram.jpg")
+                    video(autoplay)
+                        source(src="img/vid.mp4")
+                    //img(src="img/user_diagram.jpg")
                 .textRight
-                    h1 How it Works
-                    h3 FogMeister will continuously monitor the humidity in your car in order to detect wehn the windscreen has fogged up. When it detects this, a notification will be sent to your phone. You then have the option to activate a dehumidifier in the car such that by the time you need to get in, your car will be ready to drive and you can avoid any further delays to your journey!
+                    h1 HOW IT WORKS
+                    .leftimg
+                        img(src="img/notify.png")
+                        p Get a notification when the FogMeister device senses your car windscreen has fogged up
+                    .rightimg
+                        p Use our cloud based system to notify the FogMeister device to start its dehumidifier to demist your car when you desire.
+                        img(src="img/send.png")
+                    .leftimg
+                        img(src="img/car.png")
+                        p Enjoy getting in your car to a clear windscreen with no need to wait around for it to demist. 
+                
+                        
         #pricing    
             .pricing
                 h1 PRICING

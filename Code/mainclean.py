@@ -57,7 +57,6 @@ def Main(server="localhost"):
                 c.subscribe(b"ESYS/netball")
             time.sleep(5)
 
-
     c.disconnect()
 
 def demo():

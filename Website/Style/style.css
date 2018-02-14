@@ -4,6 +4,9 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   color: black; }
+  body #about {
+    position: relative;
+    top: -201px; }
   body .about {
     height: 100vh;
     width: 100vw;
@@ -27,6 +30,9 @@ body {
       font-size: 30px;
       padding-right: 50px;
       padding-top: 0px; }
+  body #contact {
+    position: relative;
+    top: -134px; }
   body .contact {
     height: 100vh;
     width: 100vw;
@@ -62,6 +68,9 @@ body {
       body .contact .right p {
         margin: 0px;
         font-size: 28px; }
+  body #how_it_works {
+    position: relative;
+    top: -67px; }
   body .how_it_works {
     height: 100vh;
     width: 100vw;
@@ -71,7 +80,8 @@ body {
       font-size: 100px;
       padding-top: 100px;
       padding-right: 50px;
-      text-align: right; }
+      text-align: right;
+      color: #FFFF00; }
     body .how_it_works h2 {
       font-size: 100px;
       padding-top: 0px;
@@ -84,11 +94,9 @@ body {
       text-align: right;
       color: #FFFFFF;
       font: italic; }
-  body .login {
-    height: 100vh;
-    width: 100vw;
-    background: url(../img/login.jpg) no-repeat center center fixed;
-    background-size: cover; }
+  body #pricing {
+    position: relative;
+    top: -67px; }
   body .pricing {
     height: 100vh;
     width: 100vw;
@@ -168,6 +176,9 @@ body {
         font-size: 20px; }
       body .problem .problemRight b {
         font-size: 32px; }
+  body #testimonials {
+    position: relative;
+    top: -134px; }
   body .testimonials {
     height: 100vh;
     width: 100vw;
@@ -196,6 +207,7 @@ body {
       text-align: right; }
   body .menu {
     display: none;
+    z-index: 999;
     position: fixed;
     width: 100vw;
     height: 60px;

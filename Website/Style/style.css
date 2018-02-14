@@ -10,26 +10,145 @@ body {
   body .about {
     height: 100vh;
     width: 100vw;
-    background: url(../img/about_us.jpg) no-repeat center center fixed;
-    background-size: cover; }
-    body .about h1 {
-      color: #FFFF00;
-      text-align: right;
-      font-size: 80px;
-      padding-right: 50px;
-      padding-top: 200px; }
-    body .about h2 {
-      color: #FFFFFF;
-      text-align: right;
-      font-size: 40px;
-      padding-right: 50px;
-      padding-top: 0px; }
+    background: #001100;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    body .about .left {
+      min-width: 35%;
+      padding-right: 15px;
+      max-height: 40%;
+      display: block;
+      background: #FFFF00; }
+      body .about .left h1 {
+        color: #000000;
+        text-align: right;
+        font-size: 80px;
+        margin: 10px 0px; }
+      body .about .left p {
+        color: #000000;
+        text-align: right;
+        font-size: 30px;
+        margin: 0px; }
+    body .about .right {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      body .about .right .Team {
+        width: 100%; }
+      body .about .right h1 {
+        color: #FFFF00;
+        text-align: center;
+        font-size: 80px;
+        margin: 0px; }
+      body .about .right p {
+        color: #FFFFFF;
+        font-size: 28px;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0px; }
+      body .about .right .jonnyRound {
+        width: 30%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        float: left; }
+        body .about .right .jonnyRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Jonny.jpg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .sophiaRound {
+        width: 30%;
+        float: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        body .about .right .sophiaRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Sophia.jpeg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .alexRound {
+        width: 30%;
+        float: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        body .about .right .alexRound .img {
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          border-color: #FFFFFF;
+          border-width: 5px;
+          border-style: solid;
+          background: url(../img/Alex.jpg) no-repeat center center;
+          background-size: cover; }
+      body .about .right .text p {
+        color: #FFFFFF;
+        padding-top: 20px;
+        font-weight: 200;
+        font-size: 20px; }
     body .about h3 {
       color: #FFFFFF;
-      text-align: right;
-      font-size: 30px;
-      padding-right: 50px;
-      padding-top: 0px; }
+      text-align: center;
+      font-size: 30px; }
   body #contact {
     position: relative;
     top: -134px; }

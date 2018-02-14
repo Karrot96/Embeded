@@ -19,26 +19,108 @@ body
     .about
         height: 100vh
         width: 100vw
-        background: url(../img/about_us.jpg) no-repeat center center fixed
+        background: $Back2
         background-size: cover
-        h1
-            color: #FFFF00
-            text-align: right
-            font-size: 80px
-            padding-right: 50px
-            padding-top: 200px
-        h2
-            color: #FFFFFF
-            text-align: right
-            font-size: 40px
-            padding-right: 50px
-            padding-top: 0px
+        display: flex
+        flex-direction: row
+        align-items: center
+        .left
+            min-width: 35%
+            padding-right: 15px
+            max-height: 40%
+            display: block
+            background: #FFFF00
+            h1
+                color: #000000
+                text-align: right
+                font-size: 80px
+                margin: 10px 0px
+            p
+                color: #000000
+                text-align: right
+                font-size: 30px
+                margin: 0px
+        .right
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .Team
+                width: 100%
+            h1
+                color: #FFFF00
+                text-align: center
+                font-size: 80px
+                margin: 0px
+            p
+                color: #FFFFFF
+                font-size: 28px
+                text-align: left
+                padding-left: 20px
+                margin: 0px
+            .jonnyRound
+                width: 30%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                float: left
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Jonny.jpg) no-repeat center center
+                    background-size: cover
+            .sophiaRound
+                width: 30%
+                float: left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Sophia.jpeg) no-repeat center center
+                    background-size: cover
+            .alexRound
+                width: 30%
+                float: left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .img
+                    width: 150px
+                    height: 150px
+                    border:
+                        radius: 75px
+                        color: #FFFFFF
+                        width: 5px
+                        style: solid
+                    background: url(../img/Alex.jpg) no-repeat center center
+                    background-size: cover
+            .text
+                p
+                    color: #FFFFFF
+                    padding-top: 20px
+                    font-weight: 200
+                    font-size: 20px
         h3
             color: #FFFFFF
-            text-align: right
+            text-align: center
             font-size: 30px
-            padding-right: 50px
-            padding-top: 0px
+
+
     #contact
         position: relative
         top: -134px

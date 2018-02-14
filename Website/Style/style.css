@@ -53,6 +53,14 @@ body {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
+      body .about .right P {
+        position: relative;
+        bottom: 7px;
+        color: #FFFFFF;
+        font-size: 28px;
+        text-align: left;
+        padding-left: 10px;
+        margin: 0px; }
       body .about .right .Team {
         width: 100%; }
       body .about .right h1 {
@@ -64,7 +72,7 @@ body {
         color: #FFFFFF;
         font-size: 28px;
         text-align: left;
-        padding-left: 20px;
+        padding-left: 10px;
         margin: 0px; }
       body .about .right .jonnyRound {
         width: 30%;
@@ -287,7 +295,9 @@ body {
     align-items: center;
     background-size: cover; }
     body .pricing h1 {
-      font-size: 60px; }
+      font-size: 80px; }
+    body .pricing .bottom h3 {
+      font-size: 50px; }
     body .pricing .sections {
       width: 80%;
       display: -webkit-box;

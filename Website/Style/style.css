@@ -71,7 +71,8 @@ body {
       font-size: 100px;
       padding-top: 100px;
       padding-right: 50px;
-      text-align: right; }
+      text-align: right;
+      color: #FFFF00; }
     body .how_it_works h2 {
       font-size: 100px;
       padding-top: 0px;
@@ -318,9 +319,9 @@ body {
       -ms-flex-align: center;
       align-items: center; }
       body .landing .landingMain .circle {
-        background: #22a3bf;
-        width: 300px;
-        height: 300px;
+        width: 360px;
+        height: 347px;
+        background: url(../img/scribble2.jpg);
         border-radius: 50%; }
         body .landing .landingMain .circle h1 {
           position: relative;

@@ -29,7 +29,7 @@ def Sub(server="localhost"):
         c.check_msg()
         print("Waiting")
         if(x['RemoveFog'] == "true"):
-            Functions.demist()
+            Functions.demist(i2cPort, address)
             x['RemoveFog'] = "false"
             c.disconnect()
             c.connect()
@@ -50,7 +50,7 @@ def Main(server="localhost"):
             if Functions.fog(i2cPort,address):
                 Functions.send()
             if(x['RemoveFog'] == "true"):
-                Functions.demist()
+                Functions.demist(i2cPort, address)
                 x['RemoveFog'] = "false"
                 c.disconnect()
                 c.connect()

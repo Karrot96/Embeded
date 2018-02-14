@@ -53,7 +53,7 @@ client.on('message', function (topic, message) {
     }else if (obj.RemoveFog){
         notifier.notify({
             title: 'FogMeister',
-            message: 'Your car it now demisting',
+            message: 'Your car is now demisting',
             icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
             sound: true, // Only Notification Center or Windows Toasters
             wait: true // Wait with callback, until user action is taken against notification

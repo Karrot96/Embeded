@@ -250,6 +250,8 @@ body {
       float: left;
       width: 65%;
       font-size: 20px; }
+    body .how_it_works .rightimg img {
+      float: right; }
     body .how_it_works p {
       color: #FFFFFF;
       float: right;

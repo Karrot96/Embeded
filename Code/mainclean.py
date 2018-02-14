@@ -74,8 +74,8 @@ def demo():
 global x
 initialJson = json.dumps({'name':'fog' , 'value':-1 ,  'WindowFogged':False, 'RemoveFog': False})
 x = json.loads(initialJson)
-CommInternet.DisableAp()
-CommInternet.ConnectWifi()
+Functions.DisableAp()
+Functions.ConnectWifi()
 text = input("enter 'd' to demo: ")
 if text == 'd':
     demo()

@@ -147,8 +147,10 @@ body {
         font-size: 20px; }
     body .about h3 {
       color: #FFFFFF;
+      width: 80%;
       text-align: center;
-      font-size: 30px; }
+      font-size: 20px;
+      font-weight: 100; }
   body #contact {
     position: relative;
     top: -134px; }

@@ -93,21 +93,17 @@ body {
       padding-right: 60px;
       text-align: right;
       color: #FFFFFF;
-<<<<<<< HEAD
       font: italic; }
   body #pricing {
     position: relative;
-    top: -67px; }
-=======
-      font: italic;
-      padding-left: 550px;
-      padding-bottom: 10px; }
+    top: -67px;
+      top-padding-left: 550px;
+      top-padding-bottom: 10px; }
   body .login {
     height: 100vh;
     width: 100vw;
     background: url(../img/login.jpg) no-repeat center center fixed;
     background-size: cover; }
->>>>>>> d584e4028c3f166f173ef624a27f694a10d28ba5
   body .pricing {
     height: 100vh;
     width: 100vw;
